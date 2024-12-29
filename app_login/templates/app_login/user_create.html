@@ -1,0 +1,44 @@
+{% extends 'app_login/base.html' %}
+{% load widget_tweaks %}
+{% block title %}Crear Usuario{% endblock title %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Crear Usuario</h1>
+    <form method="POST" class="mx-auto" style="max-width: 400px;">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        
+        <div class="mb-3">
+            {{ form.first_name.label_tag }}
+            {{ form.first_name|attr:"data-bs-toggle:tooltip;title:Por favor ingrese su primer nombre"|add_class:"form-control" }}
+            {{ form.first_name.errors }}
+        </div>
+        
+        <div class="mb-3">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name|attr:"data-bs-toggle:tooltip;title:Por favor ingrese su apellido"|add_class:"form-control" }}
+            {{ form.last_name.errors }}
+        </div>
+        
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email|attr:"data-bs-toggle:tooltip;title:Por favor ingrese una dirección de correo válida"|add_class:"form-control" }}
+            {{ form.email.errors }}
+        </div>
+        
+        <div class="mb-3">
+            {{ form.password1.label_tag }}
+            {{ form.password1|attr:"data-bs-toggle:tooltip;title:La contraseña debe tener al menos 8 caracteres y combinar letras y números"|add_class:"form-control" }}
+            {{ form.password1.errors }}
+        </div>
+        
+        <div class="mb-3">
+            {{ form.password2.label_tag }}
+            {{ form.password2|attr:"data-bs-toggle:tooltip;title:Por favor confirme su contraseña"|add_class:"form-control" }}
+            {{ form.password2.errors }}
+        </div>        
+        
+        <button type="submit" class="btn btn-primary w-100">Crear</button>
+    </form>
+</div>
+{% endblock content %}

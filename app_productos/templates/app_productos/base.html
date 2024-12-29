@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        {% comment %} encabezado {% endcomment %}
+    </header>
+    <nav>
+        {% comment %} navegación {% endcomment %}
+    </nav>
+    <aside>
+        {% comment %} publicidad o navegación interna {% endcomment %}
+    </aside>
+    <main>
+        <h1>Productos</h1>
+        {% block content %}
+        <h1>Productos</h1>
+        {% endblock content %}       
+    </main>
+
+    <footer>
+        {% comment %} pie de página {% endcomment %}
+    </footer>
+</body>
+</html>

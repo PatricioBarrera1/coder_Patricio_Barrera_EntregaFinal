@@ -1,0 +1,13 @@
+{% extends 'app_productos/base.html' %}
+
+{% block content %}
+{% comment %} form de eliminación {% endcomment %}
+
+<form method="POST">
+    {% csrf_token %}
+    <p>¿Desea eliminar este producto?</p>
+    {{libro}}
+    <input type="submit" value="Eliminar">
+</form>
+
+{% endblock content %}

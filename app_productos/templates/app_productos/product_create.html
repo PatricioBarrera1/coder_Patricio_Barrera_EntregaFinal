@@ -1,0 +1,12 @@
+{% extends 'app_productos/base.html' %}
+
+{% block content %}
+{% comment %} form de creación {% endcomment %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+    <input type="reset" value="Limpiar">
+</form>
+
+{% endblock content %}
