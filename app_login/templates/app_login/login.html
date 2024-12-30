@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="container py-5">
-    <h1 class="text-center mb-4">Login</h1>
+    <h1 class="text-center mb-4">Ingresa a tu cuenta</h1>
 
     {% if form.errors %}
     <div class="alert alert-danger" role="alert">
@@ -14,10 +14,8 @@
         {% endfor %}
     </div>
     {% endif %}
-
     <form method="post" class="mx-auto" style="max-width: 400px;">
         {% csrf_token %}
-        
         <div class="mb-3">
             {{ form.username.label_tag }}
             {{ form.username|add_class:"form-control" }}
@@ -28,8 +26,8 @@
             {{ form.password|add_class:"form-control" }}
             {{ form.password.errors }}
         </div>
-        
-        <button type="submit" class="btn btn-primary w-100">Log-In</button>
-    </form>
+        <button type="submit" class="btn btn-primary w-100">LOGIN</button>
+        <a href="{% url 'app_login:password_reset' %}" class="d-block mt-3 text-decoration-none">¿Olvidaste tu constraseña?</a>
+    </form>  
 </div>
 {% endblock content %}
