@@ -18,6 +18,7 @@
         {% csrf_token %}
         <div class="mb-3">
             {{ form.username.label_tag }}
+            <!-- {{ form.username|default:''|add_class:"form-control" }} -->
             {{ form.username|add_class:"form-control" }}
             {{ form.username.errors }}
         </div>

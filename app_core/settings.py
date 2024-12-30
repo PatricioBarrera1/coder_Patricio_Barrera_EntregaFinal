@@ -127,9 +127,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = 'app_login:login'
+#LOGIN_URL = 'app_login:login'
 LOGIN_REDIRECT_URL = 'app_login:panel'
-#LOGOUT_REDIRECT_URL = 'app_login:login'
+LOGOUT_REDIRECT_URL = 'app_login:login'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

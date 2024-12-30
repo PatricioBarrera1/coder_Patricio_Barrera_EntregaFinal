@@ -1,0 +1,9 @@
+{% extends 'app_login/base.html' %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <h1>You have been logged out</h1>
+    <p class="lead">Thank you for visiting. You can log in again below:</p>
+    <a href="{% url 'app_login:login' %}" class="btn btn-primary">Log In</a>
+</div>
+{% endblock %}

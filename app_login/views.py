@@ -5,9 +5,11 @@ from django.contrib.auth.models import User
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
 
 class UserLoginView(LoginView):
     template_name = 'app_login/login.html'
+    authentication_form = AuthenticationForm
     
 class PanelView(LoginRequiredMixin, TemplateView):
     template_name = 'app_login/panel.html'
